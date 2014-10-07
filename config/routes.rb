@@ -1,4 +1,6 @@
 Blocipedia::Application.routes.draw do
+  resources :wikis
+
   get "static/index"
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
