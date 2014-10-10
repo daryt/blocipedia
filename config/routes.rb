@@ -1,6 +1,7 @@
 Blocipedia::Application.routes.draw do
-  resources :pages
-  resources :wikis
+  resources :wikis do
+    resources :pages, except: [:index]
+  end
 
   get "static/index"
   devise_for :users
