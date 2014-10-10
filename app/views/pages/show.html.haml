@@ -7,6 +7,6 @@
   %b Body:
   = @page.body
 
-= link_to 'Edit', edit_page_path(@page)
+= link_to 'Edit', edit_wiki_page_path(@wiki, @page)
 \|
-= link_to 'Back', wikis_pages_path
+= link_to 'Back', wiki_path(@wiki)

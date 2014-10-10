@@ -10,6 +10,7 @@ class WikisController < ApplicationController
   # GET /wikis/1
   # GET /wikis/1.json
   def show
+    @wiki = Wiki.find(params[:id])
   end
 
   # GET /wikis/new
@@ -19,6 +20,7 @@ class WikisController < ApplicationController
 
   # GET /wikis/1/edit
   def edit
+    @wiki = Wiki.find(params[:id])
   end
 
   # POST /wikis
@@ -40,6 +42,7 @@ class WikisController < ApplicationController
   # PATCH/PUT /wikis/1
   # PATCH/PUT /wikis/1.json
   def update
+    @wiki = Wiki.find(params[:id])
     respond_to do |format|
       if @wiki.update(wiki_params)
         format.html { redirect_to @wiki, notice: 'Wiki was successfully updated.' }

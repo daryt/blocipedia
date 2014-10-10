@@ -2,6 +2,6 @@
 
 = render 'form'
 
-= link_to 'Show', @page
+= link_to 'Show', [@wiki, @page]
 \|
-= link_to 'Back', wikis_pages_path
+= link_to 'Back', wiki_pages_path (@wiki, @page)
