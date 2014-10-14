@@ -2,10 +2,12 @@
 
 %p
   %b Title:
-  = @page.title
+  / = @page.title
+  = markdown @page.title
 %p
   %b Body:
-  = @page.body
+  / = @page.body
+  = markdown @page.body
 
 = link_to 'Edit', edit_wiki_page_path(@wiki, @page)
 \|
