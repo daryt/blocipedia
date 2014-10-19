@@ -34,6 +34,7 @@ class PagesController < ApplicationController
     @page.wiki = @wiki
     
     
+    
 
     respond_to do |format|
       if @page.save

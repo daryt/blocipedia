@@ -16,17 +16,20 @@ class WikisController < ApplicationController
   # GET /wikis/new
   def new
     @wiki = Wiki.new
+    authorize @wiki
   end
 
   # GET /wikis/1/edit
   def edit
     @wiki = Wiki.find(params[:id])
+    authorize @wiki
   end
 
   # POST /wikis
   # POST /wikis.json
   def create
     @wiki = Wiki.new(wiki_params)
+    authorize @wiki
 
     respond_to do |format|
       if @wiki.save
