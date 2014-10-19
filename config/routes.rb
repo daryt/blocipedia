@@ -1,6 +1,6 @@
 Blocipedia::Application.routes.draw do
   resources :wikis do
-    resources :pages, except: [:index]
+    resources :pages
   end
 
   get "static/index"

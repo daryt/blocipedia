@@ -1,0 +1,21 @@
+%h1 Listing pages
+
+%table
+  %tr
+    %th Title
+    %th User
+    %th Is private
+    %th
+    %th
+    %th
+
+  - @pages.each do |page|
+    %tr
+      %td= page.title
+      %td= link_to 'Show', wiki_page_path(wiki_id: page.wiki_id, id: page.id)
+      %td= link_to 'Edit', edit_wiki_page_path(wiki_id: page.wiki_id, id: page.id)
+      %td= link_to 'Destroy', wiki_page_path(wiki_id: page.wiki_id, id: page.id), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Page', new_wiki_page_path(params[:wiki_id])
