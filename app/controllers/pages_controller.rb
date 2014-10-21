@@ -18,12 +18,14 @@ class PagesController < ApplicationController
   def new
     @wiki = Wiki.find(params[:wiki_id])
     @page = Page.new
+    authorize @page
   end
 
   # GET /pages/1/edit
   def edit
     @wiki = Wiki.find(params[:wiki_id])
     @page = Page.find(params[:id])
+    
   end
 
   # POST /pages
@@ -32,7 +34,8 @@ class PagesController < ApplicationController
     @wiki = Wiki.find(params[:wiki_id])
     @page = Page.new(page_params)
     @page.wiki = @wiki
-    
+    authorize @page
+
     
     
 
