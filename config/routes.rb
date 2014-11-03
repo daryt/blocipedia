@@ -1,6 +1,12 @@
 Blocipedia::Application.routes.draw do
+  get "collaborations/show"
+  get "collaborations/edit"
   resources :wikis do
     resources :pages
+  end
+
+  resources :wikis do
+    resources :collaborations
   end
 
   get "static/index"
