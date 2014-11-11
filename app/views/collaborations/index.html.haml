@@ -1,0 +1,17 @@
+%h1{:align => "center"} My Collaborations
+%table
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th Give Access
+  %tbody
+    = form_tag("save", method: "post") do
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td= user.email
+          %td= check_box_tag('collaborators[]', user.id)
+      = submit_tag("Save")
+
+        

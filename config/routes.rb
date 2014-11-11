@@ -6,7 +6,11 @@ Blocipedia::Application.routes.draw do
   end
 
   resources :wikis do
-    resources :collaborations
+    resources :collaborations do
+      collection do
+        post 'save'
+      end
+    end
   end
 
   get "static/index"
