@@ -1,6 +1,7 @@
 class CollaborationsController < ApplicationController
   def index
     @users = User.all
+    @collaboration_user_ids = Collaboration.where(wiki_id: params[:wiki_id]).collect{ |item| item.user_id }
   end
   def show
    
@@ -20,4 +21,5 @@ class CollaborationsController < ApplicationController
   def edit
 
   end
+
 end

@@ -11,7 +11,7 @@
         %tr
           %td= user.name
           %td= user.email
-          %td= check_box_tag('collaborators[]', user.id)
+          %td= check_box_tag('collaborators[]', user.id, @collaboration_user_ids.include?(user.id))
       = submit_tag("Save")
 
         
