@@ -4,7 +4,9 @@ class WikisController < ApplicationController
   # GET /wikis
   # GET /wikis.json
   def index
-    @wikis = Wiki.all
+    #@user = current_user
+    #@wikis = Wiki.where(user_id: params[:user_id])
+    @wikis = Wiki.where(user_id: current_user)
   end
 
   # GET /wikis/1
