@@ -19,3 +19,5 @@
 %br
 
 = link_to 'New Page', new_wiki_page_path(params[:wiki_id])
+= link_to 'My Wikis', wikis_path
+= link_to 'Add Collaborators', wiki_collaborations_path(params[:wiki_id])

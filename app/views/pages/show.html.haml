@@ -11,4 +11,4 @@
 
 = link_to 'Edit', edit_wiki_page_path(@wiki, @page)
 \|
-= link_to 'Back', wiki_path(@wiki)
+= link_to 'Back', wiki_pages_path(wiki_id: @page.wiki_id)
