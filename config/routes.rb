@@ -13,6 +13,8 @@ Blocipedia::Application.routes.draw do
     end
   end
 
+  resources :charges, only: [:new, :create]
+
   get "static/index"
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
