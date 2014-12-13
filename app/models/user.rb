@@ -5,14 +5,22 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :wikis, through: :collaborations  
+  after_initialize :init
 
   def admin?
       role == 'admin'
   end
 
-  def moderator?
-    role == 'moderator'
+  def standard?
+    role == 'standard'
   end
 
+  def premium?
+    role == 'premium'
+  end
   
+  def init
+    self.role ||= 'standard'
+  end
+
 end
