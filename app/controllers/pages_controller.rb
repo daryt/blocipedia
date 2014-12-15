@@ -25,6 +25,7 @@ class PagesController < ApplicationController
   def edit
     @wiki = Wiki.find(params[:wiki_id])
     @page = Page.find(params[:id])
+    authorize @page
     
   end
 
