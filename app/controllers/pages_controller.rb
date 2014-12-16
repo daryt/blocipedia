@@ -72,8 +72,9 @@ class PagesController < ApplicationController
   # DELETE /pages/1.json
   def destroy
     @page.destroy
+    @wiki = Wiki.find(params[:wiki_id])
     respond_to do |format|
-      format.html { redirect_to pages_url }
+      format.html { redirect_to @wiki }
       format.json { head :no_content }
     end
   end

@@ -6,7 +6,7 @@
       %th Email
       %th Give Access
   %tbody
-    = form_tag("save", method: "post") do
+    = form_tag(save_wiki_collaborations_path(@wiki_id), method: "post") do
       - @users.each do |user|
         %tr
           %td= user.name

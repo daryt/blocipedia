@@ -15,6 +15,9 @@ def create
     currency: 'usd'
   )
 
+  current_user.upgrade
+  current_user.save
+
   flash[:success] = "Thank you for upgrading your Membership, #{current_user.email}"
   redirect_to wikis_path
 

@@ -1,3 +1,5 @@
 = form_tag charges_path do
   %h4 Click the button!
+  %p Upgrading to our premium plan allows you to create private wikis and assign private collaborators to your wikis as well.  The cost is only $10 per month. 
+  %p Click "Pay with Card" to start the process. 
   %script.stripe-button{"data-amount" => @stripe_btn_data[:amount], "data-description" => @stripe_btn_data[:description], "data-key" => @stripe_btn_data[:key], :src => "https://checkout.stripe.com/checkout.js"}
