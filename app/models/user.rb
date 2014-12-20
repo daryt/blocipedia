@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   has_many :wikis, through: :collaborations  
   after_initialize :init
 
+  def role?(base_role)
+    role == base_role.to_s
+  end
+
   def admin?
       role == 'admin'
   end

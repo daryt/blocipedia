@@ -12,8 +12,10 @@
   .field
     = f.label :user_id
     = f.number_field :user_id
-  .field
-    = f.label :is_private
-    = f.check_box :is_private
-  .actions
-    = f.submit 'Save'
+  - if current_user.role?(:admin) || current_user.role?(:premium)
+    .field
+      = f.label :is_private
+      = f.check_box :is_private
+      
+    .actions
+      = f.submit 'Save'
