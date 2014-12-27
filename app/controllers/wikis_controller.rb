@@ -6,7 +6,8 @@ class WikisController < ApplicationController
   def index
     #@user = current_user
     #@wikis = Wiki.where(user_id: params[:user_id])
-    @wikis = Wiki.where(user_id: current_user)
+    #@wikis = Wiki.where(user_id: current_user)
+    @wikis = policy_scope(Wiki)
   end
 
   # GET /wikis/1
