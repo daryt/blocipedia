@@ -1,1 +1,17 @@
+%p You now have the following collaborators added.
 = @collabs
+%h1{:align => "center"} My Collaborations
+%table
+  %thead
+    %tr
+      %th Name
+      %th Email
+
+  %tbody
+    - @collabs.each do |collabs|
+      %tr
+        %td= User.find(collabs).name
+        %td= User.find(collabs).email
+
+%p= link_to 'Edit Collaborations', wiki_collaborations_path
+%p= link_to 'Back to Wiki', wiki_pages_path

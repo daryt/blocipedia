@@ -1,4 +1,15 @@
 class WikiPolicy < ApplicationPolicy
+
+def show?
+    scope.where(:id => record.id).exists?
+    #wiki_user = Wiki.find(record.id).user
+    #current_wiki = Wiki.find(params[:id])
+    #collaborations = Collaboration.where(:user_id => user)
+    #collab_wikis = Wiki.where(id: collaborations.pluck(:wiki_id))
+    #collab_wikis.include?(current_wiki)
+  end
+
+
 class Scope
      attr_reader :user, :scope
  

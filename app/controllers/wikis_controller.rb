@@ -14,6 +14,10 @@ class WikisController < ApplicationController
   # GET /wikis/1.json
   def show
     @wiki = Wiki.find(params[:id])
+    #@authorized_wiki = policy_scope(Wiki)
+    #if @authorized_wiki.include?(@wiki)
+    #authorize @wiki
+  #end
   end
 
   # GET /wikis/new
