@@ -4,8 +4,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :collaborations
   has_many :wikis, through: :collaborations  
   after_initialize :init
+
+  def role?(base_role)
+    role == base_role.to_s
+  end
 
   def admin?
       role == 'admin'
@@ -25,6 +30,10 @@ class User < ActiveRecord::Base
 
   def upgrade
     self.role = 'premium'
+  end
+
+  def current_user?
+    current_user = self
   end
   
 end

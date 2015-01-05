@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
+    @wiki = Wiki.find(params[:wiki_id])
     @pages = Page.all.where(wiki_id: params[:wiki_id])
   end
 

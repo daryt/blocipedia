@@ -6,13 +6,18 @@ class WikisController < ApplicationController
   def index
     #@user = current_user
     #@wikis = Wiki.where(user_id: params[:user_id])
-    @wikis = Wiki.where(user_id: current_user)
+    #@wikis = Wiki.where(user_id: current_user)
+    @wikis = policy_scope(Wiki)
   end
 
   # GET /wikis/1
   # GET /wikis/1.json
   def show
     @wiki = Wiki.find(params[:id])
+    #@authorized_wiki = policy_scope(Wiki)
+    #if @authorized_wiki.include?(@wiki)
+    authorize @wiki
+  #end
   end
 
   # GET /wikis/new
