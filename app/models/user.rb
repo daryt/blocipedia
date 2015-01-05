@@ -31,5 +31,9 @@ class User < ActiveRecord::Base
   def upgrade
     self.role = 'premium'
   end
+
+  def current_user?
+    current_user = self
+  end
   
 end
