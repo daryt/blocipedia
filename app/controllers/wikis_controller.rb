@@ -16,7 +16,7 @@ class WikisController < ApplicationController
     @wiki = Wiki.find(params[:id])
     #@authorized_wiki = policy_scope(Wiki)
     #if @authorized_wiki.include?(@wiki)
-    #authorize @wiki
+    authorize @wiki
   #end
   end
 
